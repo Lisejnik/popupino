@@ -2,9 +2,9 @@
 Contributors: lisejnik
 Tags: popups, modal, marketing, shortcode, low-code
 Requires at least: 6.0
-Tested up to: 6.8
+Tested up to: 6.9
 Requires PHP: 8.0
-Stable tag: 1.2.0
+Stable tag: 1.2.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -59,6 +59,9 @@ Yes. Use the shortcode:
 Yes. Disable **Display automatically on the site** and use a shortcode or click trigger.
 
 == Changelog ==
+
+= 1.2.1 =
+* Update the readme compatibility header to WordPress 6.9.
 
 = 1.2.0 =
 * Rename plugin to Low Code Popups and update the distribution slug to avoid trademark issues.
