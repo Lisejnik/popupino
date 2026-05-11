@@ -1,24 +1,24 @@
 <?php
 /**
- * Plugin Name: Low Code Popups
- * Plugin URI:  https://github.com/Lisejnik/low-code-popups
- * Description: Simple, safe low-code popups for WordPress sites, with optional Divi-friendly workflows.
- * Version:     1.2.1
- * Author:      Low Code Popups
+ * Plugin Name: Popupino
+ * Plugin URI:  https://github.com/Lisejnik/popupino
+ * Description: Simple low-code popups for WordPress. No code required, custom code optional.
+ * Version:     1.3.0
+ * Author:      Martin Liska
  * License:     GPLv2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain: low-code-popups
+ * Text Domain: popupino
  * Requires at least: 6.0
  * Requires PHP: 8.0
  *
- * @package LowCodePopups
+ * @package Popupino
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'DSPI_VERSION', '1.2.1' );
+define( 'DSPI_VERSION', '1.3.0' );
 define( 'DSPI_FILE', __FILE__ );
 define( 'DSPI_PATH', plugin_dir_path( __FILE__ ) );
 define( 'DSPI_URL', plugin_dir_url( __FILE__ ) );

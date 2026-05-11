@@ -126,13 +126,13 @@
 	}
 
 	function findPopupFromTrigger(trigger) {
-		var popupId = trigger.getAttribute('data-lcp-open-popup') || trigger.getAttribute('data-dspi-open-popup');
+		var popupId = trigger.getAttribute('data-popupino-open-popup') || trigger.getAttribute('data-lcp-open-popup') || trigger.getAttribute('data-dspi-open-popup');
 		var classMatch;
 		var href;
 
 		if (!popupId) {
 			Array.prototype.some.call(trigger.classList, function (className) {
-				classMatch = className.match(/^(?:lcp|dspi)-open-popup-(\d+)$/);
+				classMatch = className.match(/^(?:popupino|lcp|dspi)-open-popup-(\d+)$/);
 				if (classMatch) {
 					popupId = classMatch[1];
 					return true;
@@ -141,9 +141,9 @@
 			});
 		}
 
-		if (!popupId && trigger.matches('a[href^="#dspi-popup-"], a[href^="#lcp-popup-"]')) {
+		if (!popupId && trigger.matches('a[href^="#popupino-popup-"], a[href^="#dspi-popup-"], a[href^="#lcp-popup-"]')) {
 			href = trigger.getAttribute('href');
-			popupId = href ? href.replace('#dspi-popup-', '').replace('#lcp-popup-', '') : '';
+			popupId = href ? href.replace('#popupino-popup-', '').replace('#dspi-popup-', '').replace('#lcp-popup-', '') : '';
 		}
 
 		if (!popupId) {
@@ -168,7 +168,7 @@
 
 		document.addEventListener('click', function (event) {
 			var closeButton = event.target.closest('[data-dspi-close]');
-			var trigger = event.target.closest('[data-lcp-open-popup], [data-dspi-open-popup], [class*="lcp-open-popup-"], [class*="dspi-open-popup-"], a[href^="#lcp-popup-"], a[href^="#dspi-popup-"]');
+			var trigger = event.target.closest('[data-popupino-open-popup], [data-lcp-open-popup], [data-dspi-open-popup], [class*="popupino-open-popup-"], [class*="lcp-open-popup-"], [class*="dspi-open-popup-"], a[href^="#popupino-popup-"], a[href^="#lcp-popup-"], a[href^="#dspi-popup-"]');
 			var popup;
 
 			if (closeButton) {

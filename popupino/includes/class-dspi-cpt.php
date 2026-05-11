@@ -2,7 +2,7 @@
 /**
  * Custom post type registration.
  *
- * @package LowCodePopups
+ * @package Popupino
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -27,19 +27,19 @@ final class DSPI_CPT {
 	 */
 	public static function register_post_type(): void {
 		$labels = array(
-			'name'               => __( 'Popups', 'low-code-popups' ),
-			'singular_name'      => __( 'Popup', 'low-code-popups' ),
-			'menu_name'          => __( 'Popups', 'low-code-popups' ),
-			'name_admin_bar'     => __( 'Popup', 'low-code-popups' ),
-			'add_new'            => __( 'Add New', 'low-code-popups' ),
-			'add_new_item'       => __( 'Add New Popup', 'low-code-popups' ),
-			'new_item'           => __( 'New Popup', 'low-code-popups' ),
-			'edit_item'          => __( 'Edit Popup', 'low-code-popups' ),
-			'view_item'          => __( 'View Popup', 'low-code-popups' ),
-			'all_items'          => __( 'All Popups', 'low-code-popups' ),
-			'search_items'       => __( 'Search Popups', 'low-code-popups' ),
-			'not_found'          => __( 'No popups found.', 'low-code-popups' ),
-			'not_found_in_trash' => __( 'No popups found in Trash.', 'low-code-popups' ),
+			'name'               => __( 'Popups', 'popupino' ),
+			'singular_name'      => __( 'Popup', 'popupino' ),
+			'menu_name'          => __( 'Popups', 'popupino' ),
+			'name_admin_bar'     => __( 'Popup', 'popupino' ),
+			'add_new'            => __( 'Add New', 'popupino' ),
+			'add_new_item'       => __( 'Add New Popup', 'popupino' ),
+			'new_item'           => __( 'New Popup', 'popupino' ),
+			'edit_item'          => __( 'Edit Popup', 'popupino' ),
+			'view_item'          => __( 'View Popup', 'popupino' ),
+			'all_items'          => __( 'All Popups', 'popupino' ),
+			'search_items'       => __( 'Search Popups', 'popupino' ),
+			'not_found'          => __( 'No popups found.', 'popupino' ),
+			'not_found_in_trash' => __( 'No popups found in Trash.', 'popupino' ),
 		);
 
 		register_post_type(
@@ -76,9 +76,9 @@ final class DSPI_CPT {
 			$new_columns[ $key ] = $label;
 
 			if ( 'title' === $key ) {
-				$new_columns['dspi_active']   = __( 'Active', 'low-code-popups' );
-				$new_columns['dspi_template'] = __( 'Template', 'low-code-popups' );
-				$new_columns['dspi_shortcode']= __( 'Shortcode', 'low-code-popups' );
+				$new_columns['dspi_active']   = __( 'Active', 'popupino' );
+				$new_columns['dspi_template'] = __( 'Template', 'popupino' );
+				$new_columns['dspi_shortcode']= __( 'Shortcode', 'popupino' );
 			}
 		}
 
@@ -93,7 +93,7 @@ final class DSPI_CPT {
 	 */
 	public static function column_content( string $column, int $post_id ): void {
 		if ( 'dspi_active' === $column ) {
-			echo '1' === (string) dspi_get_meta( $post_id, 'is_active' ) ? esc_html__( 'Yes', 'low-code-popups' ) : esc_html__( 'No', 'low-code-popups' );
+			echo '1' === (string) dspi_get_meta( $post_id, 'is_active' ) ? esc_html__( 'Yes', 'popupino' ) : esc_html__( 'No', 'popupino' );
 			return;
 		}
 
@@ -106,7 +106,7 @@ final class DSPI_CPT {
 
 		if ( 'dspi_shortcode' === $column ) {
 			printf(
-				'<code>[lcp_popup id="%d"]</code>',
+				'<code>[popupino_popup id="%d"]</code>',
 				absint( $post_id )
 			);
 		}

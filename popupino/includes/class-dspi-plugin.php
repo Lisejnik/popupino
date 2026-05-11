@@ -2,7 +2,7 @@
 /**
  * Main plugin coordinator.
  *
- * @package LowCodePopups
+ * @package Popupino
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

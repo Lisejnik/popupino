@@ -1,8 +1,8 @@
 <?php
 /**
- * Shared helper functions for Low Code Popups.
+ * Shared helper functions for Popupino.
  *
- * @package LowCodePopups
+ * @package Popupino
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -64,8 +64,8 @@ function dspi_get_default_meta(): array {
  */
 function dspi_get_content_modes(): array {
 	return array(
-		'builder' => __( 'Visual builder fields', 'low-code-popups' ),
-		'html'    => __( 'Custom HTML / CSS / JS', 'low-code-popups' ),
+		'builder' => __( 'Visual builder fields', 'popupino' ),
+		'html'    => __( 'Custom HTML / CSS / JS', 'popupino' ),
 	);
 }
 
@@ -94,8 +94,8 @@ function dspi_get_meta( int $post_id, string $key ) {
  */
 function dspi_get_button_target_options(): array {
 	return array(
-		'same'  => __( 'Open in the same tab', 'low-code-popups' ),
-		'blank' => __( 'Open in a new tab', 'low-code-popups' ),
+		'same'  => __( 'Open in the same tab', 'popupino' ),
+		'blank' => __( 'Open in a new tab', 'popupino' ),
 	);
 }
 
@@ -106,13 +106,13 @@ function dspi_get_button_target_options(): array {
  */
 function dspi_get_font_family_options(): array {
 	return array(
-		'inherit'   => __( 'Theme default', 'low-code-popups' ),
+		'inherit'   => __( 'Theme default', 'popupino' ),
 		'arial'     => 'Arial',
 		'georgia'   => 'Georgia',
 		'tahoma'    => 'Tahoma',
 		'trebuchet' => 'Trebuchet MS',
 		'verdana'   => 'Verdana',
-		'system'    => __( 'System UI', 'low-code-popups' ),
+		'system'    => __( 'System UI', 'popupino' ),
 	);
 }
 
@@ -140,10 +140,10 @@ function dspi_get_font_family_css_values(): array {
  */
 function dspi_get_background_size_options(): array {
 	return array(
-		'cover'   => __( 'Cover area', 'low-code-popups' ),
-		'contain' => __( 'Fit entire image', 'low-code-popups' ),
-		'stretch' => __( 'Stretch to popup', 'low-code-popups' ),
-		'auto'    => __( 'Original size', 'low-code-popups' ),
+		'cover'   => __( 'Cover area', 'popupino' ),
+		'contain' => __( 'Fit entire image', 'popupino' ),
+		'stretch' => __( 'Stretch to popup', 'popupino' ),
+		'auto'    => __( 'Original size', 'popupino' ),
 	);
 }
 
@@ -181,9 +181,9 @@ function dspi_get_dimension_units(): array {
  */
 function dspi_get_display_modes(): array {
 	return array(
-		'all'     => __( 'All pages', 'low-code-popups' ),
-		'include' => __( 'Only selected pages by ID', 'low-code-popups' ),
-		'hide'    => __( 'Hide on selected pages by ID', 'low-code-popups' ),
+		'all'     => __( 'All pages', 'popupino' ),
+		'include' => __( 'Only selected pages by ID', 'popupino' ),
+		'hide'    => __( 'Hide on selected pages by ID', 'popupino' ),
 	);
 }
 
@@ -194,10 +194,10 @@ function dspi_get_display_modes(): array {
  */
 function dspi_get_frequency_options(): array {
 	return array(
-		'always'  => __( 'Show every time', 'low-code-popups' ),
-		'session' => __( 'Show once per browser session', 'low-code-popups' ),
-		'day'     => __( 'Show again after 1 day', 'low-code-popups' ),
-		'custom'  => __( 'Show again after a custom number of days', 'low-code-popups' ),
+		'always'  => __( 'Show every time', 'popupino' ),
+		'session' => __( 'Show once per browser session', 'popupino' ),
+		'day'     => __( 'Show again after 1 day', 'popupino' ),
+		'custom'  => __( 'Show again after a custom number of days', 'popupino' ),
 	);
 }
 
@@ -208,12 +208,12 @@ function dspi_get_frequency_options(): array {
  */
 function dspi_get_templates(): array {
 	return array(
-		'bottom-right' => __( 'Small popup at bottom right', 'low-code-popups' ),
-		'bottom-left'  => __( 'Small popup at bottom left', 'low-code-popups' ),
-		'center-modal' => __( 'Centered modal', 'low-code-popups' ),
-		'fullscreen'   => __( 'Fullscreen popup', 'low-code-popups' ),
-		'top-bar'      => __( 'Top bar', 'low-code-popups' ),
-		'bottom-bar'   => __( 'Bottom bar', 'low-code-popups' ),
+		'bottom-right' => __( 'Small popup at bottom right', 'popupino' ),
+		'bottom-left'  => __( 'Small popup at bottom left', 'popupino' ),
+		'center-modal' => __( 'Centered modal', 'popupino' ),
+		'fullscreen'   => __( 'Fullscreen popup', 'popupino' ),
+		'top-bar'      => __( 'Top bar', 'popupino' ),
+		'bottom-bar'   => __( 'Bottom bar', 'popupino' ),
 	);
 }
 
