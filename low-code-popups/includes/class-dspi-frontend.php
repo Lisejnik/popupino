@@ -2,7 +2,7 @@
 /**
  * Frontend rendering and shortcode.
  *
- * @package DiviSimplePopups
+ * @package LowCodePopups
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -20,6 +20,7 @@ final class DSPI_Frontend {
 		add_action( 'wp_enqueue_scripts', array( __CLASS__, 'enqueue_assets' ) );
 		add_action( 'wp_footer', array( __CLASS__, 'render_auto_popups' ) );
 		add_shortcode( 'dspi_popup', array( __CLASS__, 'shortcode' ) );
+		add_shortcode( 'lcp_popup', array( __CLASS__, 'shortcode' ) );
 	}
 
 	/**
@@ -79,7 +80,7 @@ final class DSPI_Frontend {
 				'id' => 0,
 			),
 			(array) $atts,
-			'dspi_popup'
+			'lcp_popup'
 		);
 
 		$post_id = absint( $atts['id'] );
@@ -165,7 +166,7 @@ final class DSPI_Frontend {
 			aria-labelledby="dspi-popup-title-<?php echo esc_attr( $post_id ); ?>"
 		>
 			<div class="dspi-popup__panel" style="<?php echo esc_attr( $style ); ?>">
-				<button type="button" class="dspi-popup__close" data-dspi-close aria-label="<?php esc_attr_e( 'Close popup', 'divi-simple-popups' ); ?>">×</button>
+				<button type="button" class="dspi-popup__close" data-dspi-close aria-label="<?php esc_attr_e( 'Close popup', 'low-code-popups' ); ?>">×</button>
 				<div class="dspi-popup__content">
 					<?php if ( 'html' === $content_mode && $custom_html ) : ?>
 						<div class="dspi-popup__custom-html">

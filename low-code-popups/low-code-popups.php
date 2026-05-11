@@ -1,24 +1,24 @@
 <?php
 /**
- * Plugin Name: Divi Simple Popups
+ * Plugin Name: Low Code Popups
  * Plugin URI:  https://github.com/Lisejnik/divi-simple-popup
- * Description: Simple, safe popups for Divi and WordPress sites without custom HTML, CSS, or JavaScript.
- * Version:     1.1.1
- * Author:      Divi Simple Popups
+ * Description: Simple, safe low-code popups for WordPress sites, with optional Divi-friendly workflows.
+ * Version:     1.2.0
+ * Author:      Low Code Popups
  * License:     GPLv2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain: divi-simple-popups
+ * Text Domain: low-code-popups
  * Requires at least: 6.0
  * Requires PHP: 8.0
  *
- * @package DiviSimplePopups
+ * @package LowCodePopups
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'DSPI_VERSION', '1.1.1' );
+define( 'DSPI_VERSION', '1.2.0' );
 define( 'DSPI_FILE', __FILE__ );
 define( 'DSPI_PATH', plugin_dir_path( __FILE__ ) );
 define( 'DSPI_URL', plugin_dir_url( __FILE__ ) );

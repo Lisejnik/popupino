@@ -1,18 +1,18 @@
-=== Divi Simple Popups ===
+=== Low Code Popups ===
 Contributors: lisejnik
-Tags: popups, divi, modal, marketing, shortcode
+Tags: popups, modal, marketing, shortcode, low-code
 Requires at least: 6.0
 Tested up to: 6.8
 Requires PHP: 8.0
-Stable tag: 1.1.1
+Stable tag: 1.2.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Simple responsive popup builder for WordPress sites, designed with Divi users in mind.
+Simple responsive popup builder for WordPress sites, with low-code controls and optional Divi-friendly triggers.
 
 == Description ==
 
-Divi Simple Popups is a lightweight WordPress plugin for creating simple popups without adding custom HTML, CSS, or JavaScript to a Divi Code module. It works outside Divi as well, but the workflow is designed with Divi and Divi Theme Builder users in mind.
+Low Code Popups is a lightweight WordPress plugin for creating simple popups without manually adding HTML, CSS, or JavaScript. It works with any WordPress theme and includes Divi-friendly trigger classes and workflows for users who build with Divi or Divi Theme Builder.
 
 = Features =
 
@@ -27,12 +27,13 @@ Divi Simple Popups is a lightweight WordPress plugin for creating simple popups 
 * Standalone frontend and admin CSS.
 * WordPress media uploader for the background image.
 * Button links can open in the same tab or a new tab.
-* Shortcode `[dspi_popup id="123"]`.
-* Manual opening via `.dspi-open-popup-123`, `data-dspi-open-popup="123"`, or `#dspi-popup-123`.
+* Shortcode `[lcp_popup id="123"]`.
+* Manual opening via `.lcp-open-popup-123`, `data-lcp-open-popup="123"`, or `#lcp-popup-123`.
+* Backward-compatible aliases: `[dspi_popup]`, `.dspi-open-popup-123`, and `#dspi-popup-123`.
 
 == Installation ==
 
-1. Upload the `divi-simple-popups` folder to `wp-content/plugins/`.
+1. Upload the `low-code-popups` folder to `wp-content/plugins/`.
 2. Activate the plugin in the WordPress admin.
 3. Go to **Popups** and create a new popup.
 4. Fill in the content, enable **Active popup**, and adjust the display rules if needed.
@@ -43,7 +44,7 @@ Divi Simple Popups is a lightweight WordPress plugin for creating simple popups 
 
 Add this CSS class to the Divi button or link:
 
-`dspi-open-popup-123`
+`lcp-open-popup-123`
 
 Replace `123` with the ID of your popup.
 
@@ -51,13 +52,17 @@ Replace `123` with the ID of your popup.
 
 Yes. Use the shortcode:
 
-`[dspi_popup id="123"]`
+`[lcp_popup id="123"]`
 
 = Can the popup be used without automatic display? =
 
 Yes. Disable **Display automatically on the site** and use a shortcode or click trigger.
 
 == Changelog ==
+
+= 1.2.0 =
+* Rename plugin to Low Code Popups and update the distribution slug to avoid trademark issues.
+* Add branded shortcode and trigger aliases while keeping the original aliases compatible.
 
 = 1.1.1 =
 * Fix Plugin Checker issues for readme metadata, plugin URI, translation placeholders, and translation loading.

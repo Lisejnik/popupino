@@ -1,8 +1,8 @@
 <?php
 /**
- * Shared helper functions for Divi Simple Popups.
+ * Shared helper functions for Low Code Popups.
  *
- * @package DiviSimplePopups
+ * @package LowCodePopups
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -64,8 +64,8 @@ function dspi_get_default_meta(): array {
  */
 function dspi_get_content_modes(): array {
 	return array(
-		'builder' => __( 'Visual builder fields', 'divi-simple-popups' ),
-		'html'    => __( 'Custom HTML / CSS / JS', 'divi-simple-popups' ),
+		'builder' => __( 'Visual builder fields', 'low-code-popups' ),
+		'html'    => __( 'Custom HTML / CSS / JS', 'low-code-popups' ),
 	);
 }
 
@@ -94,8 +94,8 @@ function dspi_get_meta( int $post_id, string $key ) {
  */
 function dspi_get_button_target_options(): array {
 	return array(
-		'same'  => __( 'Open in the same tab', 'divi-simple-popups' ),
-		'blank' => __( 'Open in a new tab', 'divi-simple-popups' ),
+		'same'  => __( 'Open in the same tab', 'low-code-popups' ),
+		'blank' => __( 'Open in a new tab', 'low-code-popups' ),
 	);
 }
 
@@ -106,13 +106,13 @@ function dspi_get_button_target_options(): array {
  */
 function dspi_get_font_family_options(): array {
 	return array(
-		'inherit'   => __( 'Theme default', 'divi-simple-popups' ),
+		'inherit'   => __( 'Theme default', 'low-code-popups' ),
 		'arial'     => 'Arial',
 		'georgia'   => 'Georgia',
 		'tahoma'    => 'Tahoma',
 		'trebuchet' => 'Trebuchet MS',
 		'verdana'   => 'Verdana',
-		'system'    => __( 'System UI', 'divi-simple-popups' ),
+		'system'    => __( 'System UI', 'low-code-popups' ),
 	);
 }
 
@@ -140,10 +140,10 @@ function dspi_get_font_family_css_values(): array {
  */
 function dspi_get_background_size_options(): array {
 	return array(
-		'cover'   => __( 'Cover area', 'divi-simple-popups' ),
-		'contain' => __( 'Fit entire image', 'divi-simple-popups' ),
-		'stretch' => __( 'Stretch to popup', 'divi-simple-popups' ),
-		'auto'    => __( 'Original size', 'divi-simple-popups' ),
+		'cover'   => __( 'Cover area', 'low-code-popups' ),
+		'contain' => __( 'Fit entire image', 'low-code-popups' ),
+		'stretch' => __( 'Stretch to popup', 'low-code-popups' ),
+		'auto'    => __( 'Original size', 'low-code-popups' ),
 	);
 }
 
@@ -181,9 +181,9 @@ function dspi_get_dimension_units(): array {
  */
 function dspi_get_display_modes(): array {
 	return array(
-		'all'     => __( 'All pages', 'divi-simple-popups' ),
-		'include' => __( 'Only selected pages by ID', 'divi-simple-popups' ),
-		'hide'    => __( 'Hide on selected pages by ID', 'divi-simple-popups' ),
+		'all'     => __( 'All pages', 'low-code-popups' ),
+		'include' => __( 'Only selected pages by ID', 'low-code-popups' ),
+		'hide'    => __( 'Hide on selected pages by ID', 'low-code-popups' ),
 	);
 }
 
@@ -194,10 +194,10 @@ function dspi_get_display_modes(): array {
  */
 function dspi_get_frequency_options(): array {
 	return array(
-		'always'  => __( 'Show every time', 'divi-simple-popups' ),
-		'session' => __( 'Show once per browser session', 'divi-simple-popups' ),
-		'day'     => __( 'Show again after 1 day', 'divi-simple-popups' ),
-		'custom'  => __( 'Show again after a custom number of days', 'divi-simple-popups' ),
+		'always'  => __( 'Show every time', 'low-code-popups' ),
+		'session' => __( 'Show once per browser session', 'low-code-popups' ),
+		'day'     => __( 'Show again after 1 day', 'low-code-popups' ),
+		'custom'  => __( 'Show again after a custom number of days', 'low-code-popups' ),
 	);
 }
 
@@ -208,12 +208,12 @@ function dspi_get_frequency_options(): array {
  */
 function dspi_get_templates(): array {
 	return array(
-		'bottom-right' => __( 'Small popup at bottom right', 'divi-simple-popups' ),
-		'bottom-left'  => __( 'Small popup at bottom left', 'divi-simple-popups' ),
-		'center-modal' => __( 'Centered modal', 'divi-simple-popups' ),
-		'fullscreen'   => __( 'Fullscreen popup', 'divi-simple-popups' ),
-		'top-bar'      => __( 'Top bar', 'divi-simple-popups' ),
-		'bottom-bar'   => __( 'Bottom bar', 'divi-simple-popups' ),
+		'bottom-right' => __( 'Small popup at bottom right', 'low-code-popups' ),
+		'bottom-left'  => __( 'Small popup at bottom left', 'low-code-popups' ),
+		'center-modal' => __( 'Centered modal', 'low-code-popups' ),
+		'fullscreen'   => __( 'Fullscreen popup', 'low-code-popups' ),
+		'top-bar'      => __( 'Top bar', 'low-code-popups' ),
+		'bottom-bar'   => __( 'Bottom bar', 'low-code-popups' ),
 	);
 }
 

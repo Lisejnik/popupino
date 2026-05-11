@@ -2,7 +2,7 @@
 /**
  * Main plugin coordinator.
  *
- * @package DiviSimplePopups
+ * @package LowCodePopups
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

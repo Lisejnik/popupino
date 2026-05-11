@@ -2,7 +2,7 @@
 /**
  * Admin metaboxes and meta persistence.
  *
- * @package DiviSimplePopups
+ * @package LowCodePopups
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -28,7 +28,7 @@ final class DSPI_Metaboxes {
 	public static function add_metaboxes(): void {
 		add_meta_box(
 			'dspi_content',
-			__( 'Popup Content', 'divi-simple-popups' ),
+			__( 'Popup Content', 'low-code-popups' ),
 			array( __CLASS__, 'render_content_metabox' ),
 			DSPI_POST_TYPE,
 			'normal',
@@ -37,7 +37,7 @@ final class DSPI_Metaboxes {
 
 		add_meta_box(
 			'dspi_display',
-			__( 'Display Rules', 'divi-simple-popups' ),
+			__( 'Display Rules', 'low-code-popups' ),
 			array( __CLASS__, 'render_display_metabox' ),
 			DSPI_POST_TYPE,
 			'normal',
@@ -46,7 +46,7 @@ final class DSPI_Metaboxes {
 
 		add_meta_box(
 			'dspi_design',
-			__( 'Design Settings', 'divi-simple-popups' ),
+			__( 'Design Settings', 'low-code-popups' ),
 			array( __CLASS__, 'render_design_metabox' ),
 			DSPI_POST_TYPE,
 			'normal',
@@ -55,7 +55,7 @@ final class DSPI_Metaboxes {
 
 		add_meta_box(
 			'dspi_template',
-			__( 'Template', 'divi-simple-popups' ),
+			__( 'Template', 'low-code-popups' ),
 			array( __CLASS__, 'render_template_metabox' ),
 			DSPI_POST_TYPE,
 			'side',
@@ -64,7 +64,7 @@ final class DSPI_Metaboxes {
 
 		add_meta_box(
 			'dspi_preview',
-			__( 'Live Preview', 'divi-simple-popups' ),
+			__( 'Live Preview', 'low-code-popups' ),
 			array( __CLASS__, 'render_preview_metabox' ),
 			DSPI_POST_TYPE,
 			'normal',
@@ -94,13 +94,13 @@ final class DSPI_Metaboxes {
 			'dspi-admin',
 			'dspiAdmin',
 			array(
-				'mediaTitle'  => __( 'Choose a background image', 'divi-simple-popups' ),
-				'mediaButton' => __( 'Use this image', 'divi-simple-popups' ),
+				'mediaTitle'  => __( 'Choose a background image', 'low-code-popups' ),
+				'mediaButton' => __( 'Use this image', 'low-code-popups' ),
 				'defaults'    => array(
-					'heading'        => __( 'Popup headline', 'divi-simple-popups' ),
-					'text'           => __( 'Your popup text will appear here.', 'divi-simple-popups' ),
-					'button'         => __( 'Button', 'divi-simple-popups' ),
-					'date'           => __( 'Optional date or note', 'divi-simple-popups' ),
+					'heading'        => __( 'Popup headline', 'low-code-popups' ),
+					'text'           => __( 'Your popup text will appear here.', 'low-code-popups' ),
+					'button'         => __( 'Button', 'low-code-popups' ),
+					'date'           => __( 'Optional date or note', 'low-code-popups' ),
 					'textColor'      => '#ffffff',
 					'buttonColor'    => '#2ea3f2',
 					'overlayColor'   => '#000000',
@@ -125,7 +125,7 @@ final class DSPI_Metaboxes {
 		?>
 		<div class="dspi-admin-grid">
 			<fieldset class="dspi-fieldset">
-				<legend><strong><?php esc_html_e( 'Content editing mode', 'divi-simple-popups' ); ?></strong></legend>
+				<legend><strong><?php esc_html_e( 'Content editing mode', 'low-code-popups' ); ?></strong></legend>
 				<div class="dspi-radio-row">
 					<?php foreach ( dspi_get_content_modes() as $value => $label ) : ?>
 						<label>
@@ -134,37 +134,37 @@ final class DSPI_Metaboxes {
 						</label>
 					<?php endforeach; ?>
 				</div>
-				<p class="description"><?php esc_html_e( 'Use the visual fields for the standard popup builder, or switch to custom code for advanced layouts.', 'divi-simple-popups' ); ?></p>
+				<p class="description"><?php esc_html_e( 'Use the visual fields for the standard popup builder, or switch to custom code for advanced layouts.', 'low-code-popups' ); ?></p>
 			</fieldset>
 
 			<div class="dspi-builder-fields">
 			<p>
-				<label for="dspi_heading"><strong><?php esc_html_e( 'Popup headline', 'divi-simple-popups' ); ?></strong></label>
+				<label for="dspi_heading"><strong><?php esc_html_e( 'Popup headline', 'low-code-popups' ); ?></strong></label>
 				<input type="text" id="dspi_heading" name="dspi_meta[heading]" class="widefat dspi-preview-input" value="<?php echo esc_attr( dspi_get_meta( $post->ID, 'heading' ) ); ?>">
 			</p>
 
 			<p>
-				<label for="dspi_text"><strong><?php esc_html_e( 'Popup text', 'divi-simple-popups' ); ?></strong></label>
+				<label for="dspi_text"><strong><?php esc_html_e( 'Popup text', 'low-code-popups' ); ?></strong></label>
 				<textarea id="dspi_text" name="dspi_meta[text]" rows="5" class="widefat dspi-preview-input"><?php echo esc_textarea( dspi_get_meta( $post->ID, 'text' ) ); ?></textarea>
-				<span class="description"><?php esc_html_e( 'Basic safe HTML is allowed, such as links or emphasis.', 'divi-simple-popups' ); ?></span>
+				<span class="description"><?php esc_html_e( 'Basic safe HTML is allowed, such as links or emphasis.', 'low-code-popups' ); ?></span>
 			</p>
 
 			<p>
-				<label for="dspi_date_line"><strong><?php esc_html_e( 'Date / supporting line', 'divi-simple-popups' ); ?></strong></label>
+				<label for="dspi_date_line"><strong><?php esc_html_e( 'Date / supporting line', 'low-code-popups' ); ?></strong></label>
 				<input type="text" id="dspi_date_line" name="dspi_meta[date_line]" class="widefat dspi-preview-input" value="<?php echo esc_attr( dspi_get_meta( $post->ID, 'date_line' ) ); ?>">
 			</p>
 
 			<div class="dspi-admin-columns dspi-button-settings-row">
 				<p>
-					<label for="dspi_button_text"><strong><?php esc_html_e( 'Button text', 'divi-simple-popups' ); ?></strong></label>
+					<label for="dspi_button_text"><strong><?php esc_html_e( 'Button text', 'low-code-popups' ); ?></strong></label>
 					<input type="text" id="dspi_button_text" name="dspi_meta[button_text]" class="widefat dspi-preview-input" value="<?php echo esc_attr( dspi_get_meta( $post->ID, 'button_text' ) ); ?>">
 				</p>
 				<p>
-					<label for="dspi_button_url"><strong><?php esc_html_e( 'Button URL', 'divi-simple-popups' ); ?></strong></label>
+					<label for="dspi_button_url"><strong><?php esc_html_e( 'Button URL', 'low-code-popups' ); ?></strong></label>
 					<input type="url" id="dspi_button_url" name="dspi_meta[button_url]" class="widefat" value="<?php echo esc_url( dspi_get_meta( $post->ID, 'button_url' ) ); ?>" placeholder="https://">
 				</p>
 				<p>
-					<label for="dspi_button_target"><strong><?php esc_html_e( 'Button link behavior', 'divi-simple-popups' ); ?></strong></label>
+					<label for="dspi_button_target"><strong><?php esc_html_e( 'Button link behavior', 'low-code-popups' ); ?></strong></label>
 					<select id="dspi_button_target" name="dspi_meta[button_target]" class="widefat">
 						<?php foreach ( dspi_get_button_target_options() as $value => $label ) : ?>
 							<option value="<?php echo esc_attr( $value ); ?>" <?php selected( $button_target, $value ); ?>><?php echo esc_html( $label ); ?></option>
@@ -174,49 +174,49 @@ final class DSPI_Metaboxes {
 			</div>
 
 			<div class="dspi-media-field">
-				<label><strong><?php esc_html_e( 'Background image', 'divi-simple-popups' ); ?></strong></label>
+				<label><strong><?php esc_html_e( 'Background image', 'low-code-popups' ); ?></strong></label>
 				<input type="hidden" id="dspi_background_id" name="dspi_meta[background_id]" value="<?php echo esc_attr( $background_id ); ?>">
-				<div class="dspi-image-preview" data-empty-text="<?php esc_attr_e( 'No image selected yet.', 'divi-simple-popups' ); ?>">
+				<div class="dspi-image-preview" data-empty-text="<?php esc_attr_e( 'No image selected yet.', 'low-code-popups' ); ?>">
 					<?php if ( $background_url ) : ?>
 						<img src="<?php echo esc_url( $background_url ); ?>" alt="">
 					<?php endif; ?>
 				</div>
 				<p>
-					<button type="button" class="button dspi-upload-image"><?php esc_html_e( 'Choose image', 'divi-simple-popups' ); ?></button>
-					<button type="button" class="button dspi-remove-image"><?php esc_html_e( 'Remove', 'divi-simple-popups' ); ?></button>
+					<button type="button" class="button dspi-upload-image"><?php esc_html_e( 'Choose image', 'low-code-popups' ); ?></button>
+					<button type="button" class="button dspi-remove-image"><?php esc_html_e( 'Remove', 'low-code-popups' ); ?></button>
 				</p>
 			</div>
 
 			<div class="dspi-admin-columns dspi-color-row">
 				<p>
-					<label for="dspi_text_color"><strong><?php esc_html_e( 'Text color', 'divi-simple-popups' ); ?></strong></label>
+					<label for="dspi_text_color"><strong><?php esc_html_e( 'Text color', 'low-code-popups' ); ?></strong></label>
 					<input type="color" id="dspi_text_color" name="dspi_meta[text_color]" value="<?php echo esc_attr( dspi_get_meta( $post->ID, 'text_color' ) ); ?>" data-dspi-default="#ffffff">
 				</p>
 				<p>
-					<label for="dspi_button_color"><strong><?php esc_html_e( 'Button color', 'divi-simple-popups' ); ?></strong></label>
+					<label for="dspi_button_color"><strong><?php esc_html_e( 'Button color', 'low-code-popups' ); ?></strong></label>
 					<input type="color" id="dspi_button_color" name="dspi_meta[button_color]" value="<?php echo esc_attr( dspi_get_meta( $post->ID, 'button_color' ) ); ?>" data-dspi-default="#2ea3f2">
 				</p>
 				<p>
-					<label for="dspi_overlay_color"><strong><?php esc_html_e( 'Overlay color', 'divi-simple-popups' ); ?></strong></label>
+					<label for="dspi_overlay_color"><strong><?php esc_html_e( 'Overlay color', 'low-code-popups' ); ?></strong></label>
 					<input type="color" id="dspi_overlay_color" name="dspi_meta[overlay_color]" value="<?php echo esc_attr( dspi_get_meta( $post->ID, 'overlay_color' ) ); ?>" data-dspi-default="#000000">
 				</p>
 				<p>
-					<label for="dspi_overlay_opacity"><strong><?php esc_html_e( 'Overlay opacity', 'divi-simple-popups' ); ?></strong></label>
+					<label for="dspi_overlay_opacity"><strong><?php esc_html_e( 'Overlay opacity', 'low-code-popups' ); ?></strong></label>
 					<input type="number" id="dspi_overlay_opacity" name="dspi_meta[overlay_opacity]" min="0" max="1" step="0.05" value="<?php echo esc_attr( dspi_get_meta( $post->ID, 'overlay_opacity' ) ); ?>" data-dspi-default="0.45">
 				</p>
 			</div>
 			<p class="dspi-color-reset-row">
-				<button type="button" class="button dspi-reset-colors"><?php esc_html_e( 'Reset colors to defaults', 'divi-simple-popups' ); ?></button>
-				<span class="description"><?php esc_html_e( 'Restores the original text, button, overlay color, and overlay opacity values.', 'divi-simple-popups' ); ?></span>
+				<button type="button" class="button dspi-reset-colors"><?php esc_html_e( 'Reset colors to defaults', 'low-code-popups' ); ?></button>
+				<span class="description"><?php esc_html_e( 'Restores the original text, button, overlay color, and overlay opacity values.', 'low-code-popups' ); ?></span>
 			</p>
 			</div>
 
 			<div class="dspi-custom-html-fields">
 				<p>
-					<label for="dspi_custom_html"><strong><?php esc_html_e( 'Custom HTML / CSS / JS', 'divi-simple-popups' ); ?></strong></label>
+					<label for="dspi_custom_html"><strong><?php esc_html_e( 'Custom HTML / CSS / JS', 'low-code-popups' ); ?></strong></label>
 					<textarea id="dspi_custom_html" name="dspi_meta[custom_html]" rows="12" class="widefat code"><?php echo esc_textarea( dspi_get_meta( $post->ID, 'custom_html' ) ); ?></textarea>
 					<span class="description">
-						<?php esc_html_e( 'Advanced users can write full custom markup here. Users with the unfiltered_html capability can include CSS and JavaScript; other users will have unsafe tags removed on save.', 'divi-simple-popups' ); ?>
+						<?php esc_html_e( 'Advanced users can write full custom markup here. Users with the unfiltered_html capability can include CSS and JavaScript; other users will have unsafe tags removed on save.', 'low-code-popups' ); ?>
 					</span>
 				</p>
 			</div>
@@ -238,7 +238,7 @@ final class DSPI_Metaboxes {
 		<div class="dspi-admin-grid">
 			<div class="dspi-admin-columns">
 				<p>
-					<label for="dspi_font_family"><strong><?php esc_html_e( 'Font family', 'divi-simple-popups' ); ?></strong></label>
+					<label for="dspi_font_family"><strong><?php esc_html_e( 'Font family', 'low-code-popups' ); ?></strong></label>
 					<select id="dspi_font_family" name="dspi_meta[font_family]" class="widefat dspi-preview-style-input">
 						<?php foreach ( dspi_get_font_family_options() as $value => $label ) : ?>
 							<option value="<?php echo esc_attr( $value ); ?>" <?php selected( $font_family, $value ); ?>><?php echo esc_html( $label ); ?></option>
@@ -246,7 +246,7 @@ final class DSPI_Metaboxes {
 					</select>
 				</p>
 				<p>
-					<label for="dspi_background_size"><strong><?php esc_html_e( 'Background image size', 'divi-simple-popups' ); ?></strong></label>
+					<label for="dspi_background_size"><strong><?php esc_html_e( 'Background image size', 'low-code-popups' ); ?></strong></label>
 					<select id="dspi_background_size" name="dspi_meta[background_size]" class="widefat dspi-preview-style-input">
 						<?php foreach ( dspi_get_background_size_options() as $value => $label ) : ?>
 							<option value="<?php echo esc_attr( $value ); ?>" <?php selected( $background_size, $value ); ?>><?php echo esc_html( $label ); ?></option>
@@ -257,30 +257,30 @@ final class DSPI_Metaboxes {
 
 			<div class="dspi-admin-columns dspi-typography-row">
 				<p>
-					<label for="dspi_heading_size"><strong><?php esc_html_e( 'Headline size', 'divi-simple-popups' ); ?></strong></label>
+					<label for="dspi_heading_size"><strong><?php esc_html_e( 'Headline size', 'low-code-popups' ); ?></strong></label>
 					<input type="number" id="dspi_heading_size" name="dspi_meta[heading_size]" min="10" max="120" step="1" value="<?php echo esc_attr( absint( dspi_get_meta( $post->ID, 'heading_size' ) ) ); ?>" class="dspi-preview-style-input">
-					<label class="dspi-inline-check"><input type="checkbox" name="dspi_meta[heading_bold]" value="1" <?php checked( '1', dspi_get_meta( $post->ID, 'heading_bold' ) ); ?> class="dspi-preview-style-input"> <?php esc_html_e( 'Bold', 'divi-simple-popups' ); ?></label>
-					<label class="dspi-inline-check"><input type="checkbox" name="dspi_meta[heading_italic]" value="1" <?php checked( '1', dspi_get_meta( $post->ID, 'heading_italic' ) ); ?> class="dspi-preview-style-input"> <?php esc_html_e( 'Italic', 'divi-simple-popups' ); ?></label>
+					<label class="dspi-inline-check"><input type="checkbox" name="dspi_meta[heading_bold]" value="1" <?php checked( '1', dspi_get_meta( $post->ID, 'heading_bold' ) ); ?> class="dspi-preview-style-input"> <?php esc_html_e( 'Bold', 'low-code-popups' ); ?></label>
+					<label class="dspi-inline-check"><input type="checkbox" name="dspi_meta[heading_italic]" value="1" <?php checked( '1', dspi_get_meta( $post->ID, 'heading_italic' ) ); ?> class="dspi-preview-style-input"> <?php esc_html_e( 'Italic', 'low-code-popups' ); ?></label>
 				</p>
 				<p>
-					<label for="dspi_text_size"><strong><?php esc_html_e( 'Text size', 'divi-simple-popups' ); ?></strong></label>
+					<label for="dspi_text_size"><strong><?php esc_html_e( 'Text size', 'low-code-popups' ); ?></strong></label>
 					<input type="number" id="dspi_text_size" name="dspi_meta[text_size]" min="10" max="80" step="1" value="<?php echo esc_attr( absint( dspi_get_meta( $post->ID, 'text_size' ) ) ); ?>" class="dspi-preview-style-input">
-					<label class="dspi-inline-check"><input type="checkbox" name="dspi_meta[text_bold]" value="1" <?php checked( '1', dspi_get_meta( $post->ID, 'text_bold' ) ); ?> class="dspi-preview-style-input"> <?php esc_html_e( 'Bold', 'divi-simple-popups' ); ?></label>
-					<label class="dspi-inline-check"><input type="checkbox" name="dspi_meta[text_italic]" value="1" <?php checked( '1', dspi_get_meta( $post->ID, 'text_italic' ) ); ?> class="dspi-preview-style-input"> <?php esc_html_e( 'Italic', 'divi-simple-popups' ); ?></label>
+					<label class="dspi-inline-check"><input type="checkbox" name="dspi_meta[text_bold]" value="1" <?php checked( '1', dspi_get_meta( $post->ID, 'text_bold' ) ); ?> class="dspi-preview-style-input"> <?php esc_html_e( 'Bold', 'low-code-popups' ); ?></label>
+					<label class="dspi-inline-check"><input type="checkbox" name="dspi_meta[text_italic]" value="1" <?php checked( '1', dspi_get_meta( $post->ID, 'text_italic' ) ); ?> class="dspi-preview-style-input"> <?php esc_html_e( 'Italic', 'low-code-popups' ); ?></label>
 				</p>
 				<p>
-					<label for="dspi_button_size"><strong><?php esc_html_e( 'Button text size', 'divi-simple-popups' ); ?></strong></label>
+					<label for="dspi_button_size"><strong><?php esc_html_e( 'Button text size', 'low-code-popups' ); ?></strong></label>
 					<input type="number" id="dspi_button_size" name="dspi_meta[button_size]" min="10" max="60" step="1" value="<?php echo esc_attr( absint( dspi_get_meta( $post->ID, 'button_size' ) ) ); ?>" class="dspi-preview-style-input">
-					<label class="dspi-inline-check"><input type="checkbox" name="dspi_meta[button_bold]" value="1" <?php checked( '1', dspi_get_meta( $post->ID, 'button_bold' ) ); ?> class="dspi-preview-style-input"> <?php esc_html_e( 'Bold', 'divi-simple-popups' ); ?></label>
-					<label class="dspi-inline-check"><input type="checkbox" name="dspi_meta[button_italic]" value="1" <?php checked( '1', dspi_get_meta( $post->ID, 'button_italic' ) ); ?> class="dspi-preview-style-input"> <?php esc_html_e( 'Italic', 'divi-simple-popups' ); ?></label>
+					<label class="dspi-inline-check"><input type="checkbox" name="dspi_meta[button_bold]" value="1" <?php checked( '1', dspi_get_meta( $post->ID, 'button_bold' ) ); ?> class="dspi-preview-style-input"> <?php esc_html_e( 'Bold', 'low-code-popups' ); ?></label>
+					<label class="dspi-inline-check"><input type="checkbox" name="dspi_meta[button_italic]" value="1" <?php checked( '1', dspi_get_meta( $post->ID, 'button_italic' ) ); ?> class="dspi-preview-style-input"> <?php esc_html_e( 'Italic', 'low-code-popups' ); ?></label>
 				</p>
 			</div>
 
 			<div class="dspi-admin-columns dspi-dimensions-row">
 				<p>
-					<label for="dspi_popup_width"><strong><?php esc_html_e( 'Popup width', 'divi-simple-popups' ); ?></strong></label>
+					<label for="dspi_popup_width"><strong><?php esc_html_e( 'Popup width', 'low-code-popups' ); ?></strong></label>
 					<span class="dspi-unit-field">
-						<input type="number" id="dspi_popup_width" name="dspi_meta[popup_width]" min="0" step="1" value="<?php echo esc_attr( dspi_get_meta( $post->ID, 'popup_width' ) ); ?>" class="dspi-preview-style-input" placeholder="<?php esc_attr_e( 'Default', 'divi-simple-popups' ); ?>">
+						<input type="number" id="dspi_popup_width" name="dspi_meta[popup_width]" min="0" step="1" value="<?php echo esc_attr( dspi_get_meta( $post->ID, 'popup_width' ) ); ?>" class="dspi-preview-style-input" placeholder="<?php esc_attr_e( 'Default', 'low-code-popups' ); ?>">
 						<select name="dspi_meta[popup_width_unit]" id="dspi_popup_width_unit" class="dspi-preview-style-input">
 							<?php foreach ( dspi_get_dimension_units() as $value => $label ) : ?>
 								<option value="<?php echo esc_attr( $value ); ?>" <?php selected( $popup_width_unit, $value ); ?>><?php echo esc_html( $label ); ?></option>
@@ -289,9 +289,9 @@ final class DSPI_Metaboxes {
 					</span>
 				</p>
 				<p>
-					<label for="dspi_popup_height"><strong><?php esc_html_e( 'Popup height', 'divi-simple-popups' ); ?></strong></label>
+					<label for="dspi_popup_height"><strong><?php esc_html_e( 'Popup height', 'low-code-popups' ); ?></strong></label>
 					<span class="dspi-unit-field">
-						<input type="number" id="dspi_popup_height" name="dspi_meta[popup_height]" min="0" step="1" value="<?php echo esc_attr( dspi_get_meta( $post->ID, 'popup_height' ) ); ?>" class="dspi-preview-style-input" placeholder="<?php esc_attr_e( 'Default', 'divi-simple-popups' ); ?>">
+						<input type="number" id="dspi_popup_height" name="dspi_meta[popup_height]" min="0" step="1" value="<?php echo esc_attr( dspi_get_meta( $post->ID, 'popup_height' ) ); ?>" class="dspi-preview-style-input" placeholder="<?php esc_attr_e( 'Default', 'low-code-popups' ); ?>">
 						<select name="dspi_meta[popup_height_unit]" id="dspi_popup_height_unit" class="dspi-preview-style-input">
 							<?php foreach ( dspi_get_dimension_units() as $value => $label ) : ?>
 								<option value="<?php echo esc_attr( $value ); ?>" <?php selected( $popup_height_unit, $value ); ?>><?php echo esc_html( $label ); ?></option>
@@ -300,7 +300,7 @@ final class DSPI_Metaboxes {
 					</span>
 				</p>
 			</div>
-			<p class="description"><?php esc_html_e( 'Leave width or height empty to use the selected template default. The popup will still respect the visitor screen size.', 'divi-simple-popups' ); ?></p>
+			<p class="description"><?php esc_html_e( 'Leave width or height empty to use the selected template default. The popup will still respect the visitor screen size.', 'low-code-popups' ); ?></p>
 		</div>
 		<?php
 	}
@@ -318,16 +318,16 @@ final class DSPI_Metaboxes {
 		<div class="dspi-admin-grid">
 			<label class="dspi-checkbox">
 				<input type="checkbox" name="dspi_meta[is_active]" value="1" <?php checked( '1', dspi_get_meta( $post->ID, 'is_active' ) ); ?>>
-				<span><?php esc_html_e( 'Active popup', 'divi-simple-popups' ); ?></span>
+				<span><?php esc_html_e( 'Active popup', 'low-code-popups' ); ?></span>
 			</label>
 
 			<label class="dspi-checkbox">
 				<input type="checkbox" name="dspi_meta[auto_display]" value="1" <?php checked( '1', dspi_get_meta( $post->ID, 'auto_display' ) ); ?>>
-				<span><?php esc_html_e( 'Display automatically on the site', 'divi-simple-popups' ); ?></span>
+				<span><?php esc_html_e( 'Display automatically on the site', 'low-code-popups' ); ?></span>
 			</label>
 
 			<p>
-				<label for="dspi_display_mode"><strong><?php esc_html_e( 'Display mode', 'divi-simple-popups' ); ?></strong></label>
+				<label for="dspi_display_mode"><strong><?php esc_html_e( 'Display mode', 'low-code-popups' ); ?></strong></label>
 				<select id="dspi_display_mode" name="dspi_meta[display_mode]" class="widefat">
 					<?php foreach ( dspi_get_display_modes() as $value => $label ) : ?>
 						<option value="<?php echo esc_attr( $value ); ?>" <?php selected( $display_mode, $value ); ?>><?php echo esc_html( $label ); ?></option>
@@ -336,17 +336,17 @@ final class DSPI_Metaboxes {
 			</p>
 
 			<p>
-				<label for="dspi_page_ids"><strong><?php esc_html_e( 'Page IDs separated by commas', 'divi-simple-popups' ); ?></strong></label>
+				<label for="dspi_page_ids"><strong><?php esc_html_e( 'Page IDs separated by commas', 'low-code-popups' ); ?></strong></label>
 				<input type="text" id="dspi_page_ids" name="dspi_meta[page_ids]" class="widefat" value="<?php echo esc_attr( dspi_get_meta( $post->ID, 'page_ids' ) ); ?>" placeholder="12, 24, 35">
 			</p>
 
 			<div class="dspi-admin-columns">
 				<p>
-					<label for="dspi_delay"><strong><?php esc_html_e( 'Delay in seconds', 'divi-simple-popups' ); ?></strong></label>
+					<label for="dspi_delay"><strong><?php esc_html_e( 'Delay in seconds', 'low-code-popups' ); ?></strong></label>
 					<input type="number" id="dspi_delay" name="dspi_meta[delay]" min="0" step="1" value="<?php echo esc_attr( absint( dspi_get_meta( $post->ID, 'delay' ) ) ); ?>">
 				</p>
 				<p>
-					<label for="dspi_frequency"><strong><?php esc_html_e( 'After closing, when should this popup appear again?', 'divi-simple-popups' ); ?></strong></label>
+					<label for="dspi_frequency"><strong><?php esc_html_e( 'After closing, when should this popup appear again?', 'low-code-popups' ); ?></strong></label>
 					<select id="dspi_frequency" name="dspi_meta[frequency]" class="widefat">
 						<?php foreach ( dspi_get_frequency_options() as $value => $label ) : ?>
 							<option value="<?php echo esc_attr( $value ); ?>" <?php selected( $frequency, $value ); ?>><?php echo esc_html( $label ); ?></option>
@@ -354,34 +354,34 @@ final class DSPI_Metaboxes {
 					</select>
 				</p>
 				<p>
-					<label for="dspi_custom_days"><strong><?php esc_html_e( 'Custom days before showing again', 'divi-simple-popups' ); ?></strong></label>
+					<label for="dspi_custom_days"><strong><?php esc_html_e( 'Custom days before showing again', 'low-code-popups' ); ?></strong></label>
 					<input type="number" id="dspi_custom_days" name="dspi_meta[custom_days]" min="1" step="1" value="<?php echo esc_attr( max( 1, absint( dspi_get_meta( $post->ID, 'custom_days' ) ) ) ); ?>">
-					<span class="description"><?php esc_html_e( 'Used only when the custom-days option is selected. Example: 7 means the popup can appear again 7 days after the visitor closes it.', 'divi-simple-popups' ); ?></span>
+					<span class="description"><?php esc_html_e( 'Used only when the custom-days option is selected. Example: 7 means the popup can appear again 7 days after the visitor closes it.', 'low-code-popups' ); ?></span>
 				</p>
 			</div>
 
 			<div class="dspi-help-box">
-				<strong><?php esc_html_e( 'How display frequency works', 'divi-simple-popups' ); ?></strong>
+				<strong><?php esc_html_e( 'How display frequency works', 'low-code-popups' ); ?></strong>
 				<ul>
-					<li><?php esc_html_e( 'Show every time: the popup can appear again after every page load or refresh, even if the visitor closed it before.', 'divi-simple-popups' ); ?></li>
-					<li><?php esc_html_e( 'Show once options: after the visitor closes the popup, the browser remembers it and hides it for the selected period.', 'divi-simple-popups' ); ?></li>
-					<li><?php esc_html_e( 'Custom days does not disable the popup permanently. It only controls how long to wait before showing it again to the same visitor in the same browser.', 'divi-simple-popups' ); ?></li>
+					<li><?php esc_html_e( 'Show every time: the popup can appear again after every page load or refresh, even if the visitor closed it before.', 'low-code-popups' ); ?></li>
+					<li><?php esc_html_e( 'Show once options: after the visitor closes the popup, the browser remembers it and hides it for the selected period.', 'low-code-popups' ); ?></li>
+					<li><?php esc_html_e( 'Custom days does not disable the popup permanently. It only controls how long to wait before showing it again to the same visitor in the same browser.', 'low-code-popups' ); ?></li>
 				</ul>
 			</div>
 
 			<div class="dspi-admin-columns">
 				<p>
-					<label for="dspi_start_date"><strong><?php esc_html_e( 'Show only from date', 'divi-simple-popups' ); ?></strong></label>
+					<label for="dspi_start_date"><strong><?php esc_html_e( 'Show only from date', 'low-code-popups' ); ?></strong></label>
 					<input type="date" id="dspi_start_date" name="dspi_meta[start_date]" value="<?php echo esc_attr( dspi_get_meta( $post->ID, 'start_date' ) ); ?>">
 				</p>
 				<p>
-					<label for="dspi_end_date"><strong><?php esc_html_e( 'Show only until date', 'divi-simple-popups' ); ?></strong></label>
+					<label for="dspi_end_date"><strong><?php esc_html_e( 'Show only until date', 'low-code-popups' ); ?></strong></label>
 					<input type="date" id="dspi_end_date" name="dspi_meta[end_date]" value="<?php echo esc_attr( dspi_get_meta( $post->ID, 'end_date' ) ); ?>">
 				</p>
 			</div>
 
 			<p class="description">
-				<?php esc_html_e( 'Manual opening via a link still works even after the popup has been closed automatically for the selected period.', 'divi-simple-popups' ); ?>
+				<?php esc_html_e( 'Manual opening via a link still works even after the popup has been closed automatically for the selected period.', 'low-code-popups' ); ?>
 			</p>
 		</div>
 		<?php
@@ -396,7 +396,7 @@ final class DSPI_Metaboxes {
 		$template = (string) dspi_get_meta( $post->ID, 'template' );
 		?>
 		<p>
-			<label for="dspi_template_select"><strong><?php esc_html_e( 'Choose a template', 'divi-simple-popups' ); ?></strong></label>
+			<label for="dspi_template_select"><strong><?php esc_html_e( 'Choose a template', 'low-code-popups' ); ?></strong></label>
 			<select id="dspi_template_select" name="dspi_meta[template]" class="widefat">
 				<?php foreach ( dspi_get_templates() as $value => $label ) : ?>
 					<option value="<?php echo esc_attr( $value ); ?>" <?php selected( $template, $value ); ?>><?php echo esc_html( $label ); ?></option>
@@ -408,7 +408,7 @@ final class DSPI_Metaboxes {
 			<?php
 			printf(
 				/* translators: 1: current popup ID for CSS class, 2: current popup ID for shortcode. */
-				esc_html__( 'Manual opening: use the CSS class dspi-open-popup-%1$d or the shortcode [dspi_popup id="%2$d"].', 'divi-simple-popups' ),
+				esc_html__( 'Manual opening: use the CSS class lcp-open-popup-%1$d or the shortcode [lcp_popup id="%2$d"].', 'low-code-popups' ),
 				absint( $post->ID ),
 				absint( $post->ID )
 			);
@@ -458,8 +458,8 @@ final class DSPI_Metaboxes {
 		?>
 		<div class="dspi-live-preview" data-template="<?php echo esc_attr( $template ); ?>" style="<?php echo esc_attr( $style ); ?>">
 			<div class="dspi-live-preview__toolbar">
-				<strong><?php esc_html_e( 'Preview', 'divi-simple-popups' ); ?></strong>
-				<span><?php esc_html_e( 'Updates while you edit the popup settings.', 'divi-simple-popups' ); ?></span>
+				<strong><?php esc_html_e( 'Preview', 'low-code-popups' ); ?></strong>
+				<span><?php esc_html_e( 'Updates while you edit the popup settings.', 'low-code-popups' ); ?></span>
 			</div>
 			<div class="dspi-live-preview__viewport">
 				<div class="dspi-live-preview__site">
@@ -468,11 +468,11 @@ final class DSPI_Metaboxes {
 					<span></span>
 				</div>
 				<div class="dspi-live-preview__popup">
-					<button type="button" aria-label="<?php esc_attr_e( 'Close popup', 'divi-simple-popups' ); ?>">×</button>
-					<p class="dspi-live-preview__date"><?php echo esc_html( dspi_get_meta( $post->ID, 'date_line' ) ?: __( 'Optional date or note', 'divi-simple-popups' ) ); ?></p>
-					<strong class="dspi-live-preview__heading"><?php echo esc_html( dspi_get_meta( $post->ID, 'heading' ) ?: __( 'Popup headline', 'divi-simple-popups' ) ); ?></strong>
-					<div class="dspi-live-preview__text"><?php echo esc_html( wp_strip_all_tags( dspi_get_meta( $post->ID, 'text' ) ) ?: __( 'Your popup text will appear here.', 'divi-simple-popups' ) ); ?></div>
-					<span class="dspi-live-preview__button"><?php echo esc_html( dspi_get_meta( $post->ID, 'button_text' ) ?: __( 'Button', 'divi-simple-popups' ) ); ?></span>
+					<button type="button" aria-label="<?php esc_attr_e( 'Close popup', 'low-code-popups' ); ?>">×</button>
+					<p class="dspi-live-preview__date"><?php echo esc_html( dspi_get_meta( $post->ID, 'date_line' ) ?: __( 'Optional date or note', 'low-code-popups' ) ); ?></p>
+					<strong class="dspi-live-preview__heading"><?php echo esc_html( dspi_get_meta( $post->ID, 'heading' ) ?: __( 'Popup headline', 'low-code-popups' ) ); ?></strong>
+					<div class="dspi-live-preview__text"><?php echo esc_html( wp_strip_all_tags( dspi_get_meta( $post->ID, 'text' ) ) ?: __( 'Your popup text will appear here.', 'low-code-popups' ) ); ?></div>
+					<span class="dspi-live-preview__button"><?php echo esc_html( dspi_get_meta( $post->ID, 'button_text' ) ?: __( 'Button', 'low-code-popups' ) ); ?></span>
 				</div>
 			</div>
 		</div>
