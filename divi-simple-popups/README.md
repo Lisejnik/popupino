@@ -51,3 +51,7 @@ You can also insert a popup manually with:
 
 - WordPress 6.0+
 - PHP 8.0+
+
+## License
+
+Divi Simple Popups is licensed under the GPL-2.0-or-later license.
