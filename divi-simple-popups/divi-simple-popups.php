@@ -1,14 +1,13 @@
 <?php
 /**
  * Plugin Name: Divi Simple Popups
- * Plugin URI:  https://example.com/divi-simple-popups
+ * Plugin URI:  https://github.com/Lisejnik/divi-simple-popup
  * Description: Simple, safe popups for Divi and WordPress sites without custom HTML, CSS, or JavaScript.
- * Version:     1.1.0
+ * Version:     1.1.1
  * Author:      Divi Simple Popups
- * License:     GPL-2.0-or-later
+ * License:     GPLv2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: divi-simple-popups
- * Domain Path: /languages
  * Requires at least: 6.0
  * Requires PHP: 8.0
  *
@@ -19,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'DSPI_VERSION', '1.1.0' );
+define( 'DSPI_VERSION', '1.1.1' );
 define( 'DSPI_FILE', __FILE__ );
 define( 'DSPI_PATH', plugin_dir_path( __FILE__ ) );
 define( 'DSPI_URL', plugin_dir_url( __FILE__ ) );

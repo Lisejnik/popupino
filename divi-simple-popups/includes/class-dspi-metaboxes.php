@@ -312,6 +312,7 @@ final class DSPI_Metaboxes {
 	 */
 	public static function render_display_metabox( WP_Post $post ): void {
 		$display_mode = (string) dspi_get_meta( $post->ID, 'display_mode' );
+		$display_mode = 'exclude' === $display_mode ? 'hide' : $display_mode;
 		$frequency    = (string) dspi_get_meta( $post->ID, 'frequency' );
 		?>
 		<div class="dspi-admin-grid">
@@ -406,8 +407,8 @@ final class DSPI_Metaboxes {
 		<p class="description">
 			<?php
 			printf(
-				/* translators: %d: current popup ID */
-				esc_html__( 'Manual opening: use the CSS class dspi-open-popup-%d or the shortcode [dspi_popup id="%d"].', 'divi-simple-popups' ),
+				/* translators: 1: current popup ID for CSS class, 2: current popup ID for shortcode. */
+				esc_html__( 'Manual opening: use the CSS class dspi-open-popup-%1$d or the shortcode [dspi_popup id="%2$d"].', 'divi-simple-popups' ),
 				absint( $post->ID ),
 				absint( $post->ID )
 			);
@@ -497,7 +498,7 @@ final class DSPI_Metaboxes {
 			return;
 		}
 
-		$raw      = isset( $_POST['dspi_meta'] ) && is_array( $_POST['dspi_meta'] ) ? wp_unslash( $_POST['dspi_meta'] ) : array();
+		$raw      = isset( $_POST['dspi_meta'] ) && is_array( $_POST['dspi_meta'] ) ? wp_unslash( $_POST['dspi_meta'] ) : array(); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- Each field is sanitized below according to its expected type.
 		$defaults = dspi_get_default_meta();
 		$units    = dspi_get_dimension_units();
 		$custom_html = (string) ( $raw['custom_html'] ?? '' );

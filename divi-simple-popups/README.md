@@ -1,57 +1,69 @@
-# Divi Simple Popups
+=== Divi Simple Popups ===
+Contributors: lisejnik
+Tags: popups, divi, modal, marketing, shortcode
+Requires at least: 6.0
+Tested up to: 6.8
+Requires PHP: 8.0
+Stable tag: 1.1.1
+License: GPLv2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+
+Simple responsive popup builder for WordPress sites, designed with Divi users in mind.
+
+== Description ==
 
 Divi Simple Popups is a lightweight WordPress plugin for creating simple popups without adding custom HTML, CSS, or JavaScript to a Divi Code module. It works outside Divi as well, but the workflow is designed with Divi and Divi Theme Builder users in mind.
 
-## Features
+= Features =
 
-- Custom Post Type `dspi_popup` for managing popups.
-- Metaboxes for content, display rules, template selection, and live preview.
-- Templates: bottom right, bottom left, centered modal, fullscreen, top bar, and bottom bar.
-- Design controls for fonts, bold/italic styles, text sizes, popup dimensions, and background image sizing.
-- Advanced custom HTML mode for users who want to write their own markup.
-- Automatic display based on page rules, delay, date range, and frequency.
-- Frequency options explain whether the popup should show every time or stay hidden for a selected period after the visitor closes it.
-- Standalone frontend JavaScript with no jQuery dependency.
-- Standalone frontend and admin CSS.
-- WordPress media uploader for the background image.
-- Button links can open in the same tab or a new tab.
-- Shortcode `[dspi_popup id="123"]`.
-- Manual opening via `.dspi-open-popup-123`, `data-dspi-open-popup="123"`, or `#dspi-popup-123`.
+* Custom Post Type `dspi_popup` for managing popups.
+* Metaboxes for content, display rules, template selection, and live preview.
+* Templates: bottom right, bottom left, centered modal, fullscreen, top bar, and bottom bar.
+* Design controls for fonts, bold/italic styles, text sizes, popup dimensions, and background image sizing.
+* Advanced custom HTML mode for users who want to write their own markup.
+* Automatic display based on page rules, delay, date range, and frequency.
+* Frequency options explain whether the popup should show every time or stay hidden for a selected period after the visitor closes it.
+* Standalone frontend JavaScript with no jQuery dependency.
+* Standalone frontend and admin CSS.
+* WordPress media uploader for the background image.
+* Button links can open in the same tab or a new tab.
+* Shortcode `[dspi_popup id="123"]`.
+* Manual opening via `.dspi-open-popup-123`, `data-dspi-open-popup="123"`, or `#dspi-popup-123`.
 
-## Installation
+== Installation ==
 
 1. Upload the `divi-simple-popups` folder to `wp-content/plugins/`.
 2. Activate the plugin in the WordPress admin.
 3. Go to **Popups** and create a new popup.
 4. Fill in the content, enable **Active popup**, and adjust the display rules if needed.
 
-## Using With Divi
+== Frequently Asked Questions ==
 
-Popups are rendered automatically in the site footer. To open a popup when a Divi button or link is clicked, add this CSS class to the element:
+= How do I open a popup from a Divi button? =
 
-```text
-dspi-open-popup-123
-```
+Add this CSS class to the Divi button or link:
 
-Replace the number with the ID of your popup.
+`dspi-open-popup-123`
 
-You can also insert a popup manually with:
+Replace `123` with the ID of your popup.
 
-```text
-[dspi_popup id="123"]
-```
+= Can I insert a popup manually? =
 
-## Notes
+Yes. Use the shortcode:
 
-- Disable **Display automatically on the site** if you only want to use the popup with a shortcode or click trigger.
-- Display frequency is stored in the browser with `sessionStorage` and `localStorage`.
-- The plugin does not use Composer, a build step, or paid libraries.
+`[dspi_popup id="123"]`
 
-## Compatibility
+= Can the popup be used without automatic display? =
 
-- WordPress 6.0+
-- PHP 8.0+
+Yes. Disable **Display automatically on the site** and use a shortcode or click trigger.
 
-## License
+== Changelog ==
 
-Divi Simple Popups is licensed under the GPL-2.0-or-later license.
+= 1.1.1 =
+* Fix Plugin Checker issues for readme metadata, plugin URI, translation placeholders, and translation loading.
+
+= 1.1.0 =
+* Add typography, popup dimensions, background image sizing, and advanced custom HTML mode.
+
+= 1.0.0 =
+* Initial release.

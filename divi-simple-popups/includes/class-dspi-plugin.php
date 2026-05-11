@@ -37,8 +37,6 @@ final class DSPI_Plugin {
 	 * Boot plugin modules.
 	 */
 	private function __construct() {
-		load_plugin_textdomain( 'divi-simple-popups', false, dirname( plugin_basename( DSPI_FILE ) ) . '/languages' );
-
 		DSPI_CPT::init();
 		DSPI_Metaboxes::init();
 		DSPI_Frontend::init();

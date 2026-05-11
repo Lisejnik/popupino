@@ -183,7 +183,7 @@ function dspi_get_display_modes(): array {
 	return array(
 		'all'     => __( 'All pages', 'divi-simple-popups' ),
 		'include' => __( 'Only selected pages by ID', 'divi-simple-popups' ),
-		'exclude' => __( 'Hide on selected pages by ID', 'divi-simple-popups' ),
+		'hide'    => __( 'Hide on selected pages by ID', 'divi-simple-popups' ),
 	);
 }
 
@@ -353,7 +353,7 @@ function dspi_should_render_popup( int $post_id, bool $manual_insertion = false 
 		return $current_id > 0 && in_array( $current_id, $page_ids, true );
 	}
 
-	if ( 'exclude' === $display_mode ) {
+	if ( 'hide' === $display_mode || 'exclude' === $display_mode ) {
 		return ! ( $current_id > 0 && in_array( $current_id, $page_ids, true ) );
 	}
 
